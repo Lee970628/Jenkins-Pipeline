@@ -10,33 +10,33 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Fetch the source code from the directory path specified by the environment variable: ${env.DIRECTORY_PATH}"
+                echo "Use maven for building"
                 echo "Compile the code and generate any necessary artefacts"
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
-                echo "Unit tests"
+                echo "Unit tests by using JUnit"
                 echo "Integration tests"
             }
         }
 
         stage('Code Analysis') {
             steps {
-                echo "Integrate a code analysis tool to analyse the code"
+                echo "Integrate a code analysis tool named SonarQube to analyse the code"
             }
         }
 
         stage('Security Scan') {
             steps {
-                echo "identify any vulnerabilities"
+                echo "identify any vulnerabilities by OWASP"
             }
         }
 
          stage('Deploy to Staging') {
             steps {
-                echo "Deploy the application to a staging server"
+                echo "Deploy the application to AWS"
             }
         }
 
